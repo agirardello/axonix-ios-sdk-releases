@@ -114,12 +114,14 @@ have to do is to call `[Axonix startWithApplicationId:@"your-application-id-here
 You can put this call in the `application:didFinishLaunchingWithOptions:` method in
 your App Delegate:
 
+(Only the commented lines need to be added)
+
 ```
 @implementation AXNAppDelegate
 
-- (void)applicationWillResignActive:(UIApplication *)application
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [Axonix startWithApplicationId:@"your-application-id-here"];
+    [Axonix startWithApplicationId:@"your-application-id-here"]; //Add this
 }
 
 @end
@@ -132,6 +134,9 @@ Application ID when you're finished.
 
 
 #### Creating an Ad in your Interface
+
+**IMPORTANT:** After enabling an ad in the developer dashboard you may have wait up to an hour before
+ it becomes available.
 
 ##### 1. Add a view to your interface
 
@@ -152,12 +157,14 @@ Next, set the Custom Class of the view to `AxonixAdViewiPhone_320x50` in the Ide
 To get access to the ad view in the View Controller, you'll need to add an outlet to the controller and link
 it to the view in the interface
 
+(Again, only the commented lines need adding)
+
 ```
 #import "AXNViewController.h"
-#import "AxonixAdView.h"
+#import "AxonixAdView.h"  //Add this
 
 @interface AXNViewController ()
-@property (strong, nonatomic) IBOutlet AxonixAdView *adView;
+@property (strong, nonatomic) IBOutlet AxonixAdView *adView;  //Add this
 @end
 
 @implementation AXNViewController
@@ -215,8 +222,6 @@ cancel your ad
 ```
 - (void)dealloc {
 	[self.adView cancelAd];
-
-	[super dealloc];
 }
 ```
 
