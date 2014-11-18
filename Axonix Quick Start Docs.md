@@ -12,6 +12,7 @@ __Table of contents__
   - [Install Manually (Not recommended)](#install-manually-not-recommended)
     - [Add the Axonix SDK files to your project (only for Manual installation)](#add-the-axonix-sdk-files-to-your-project-only-for-manual-installation)
     - [Link Framework Dependencies (only for Manual installation)](#link-framework-dependencies-only-for-manual-installation)
+    - [Add the linker flag (only for Manual installation)](#add-the-linker-flag-only-for-manual-installation)
 - [Integrate Axonix Ads with Your Code](#integrate-axonix-ads-with-your-code)
   - [Setup your App Delegate](#setup-your-app-delegate)
   - [Adding a Banner Ad in your Interface](#adding-a-banner-ad-in-your-interface)
@@ -38,7 +39,7 @@ This is the Axonix SDK. You can include this in your applications to display ads
 
 Requirements:
 
-* This SDK requires iOS SDK 6.1 or greater
+* This SDK requires iOS SDK 6.0 or greater
 * You will need an account in [axonix.com](http://axonix.com)
  * You will need to register an application there and register the ad sizes that you want to display
  * This will provide you with an `application-id` that you will input below
@@ -58,7 +59,7 @@ We __highly suggest__ using CocoaPods because CocoaPods will take care of adding
 
 If you aren't already using CocoaPods but would like to, check out the [CocoaPods Getting Started Guide](http://guides.cocoapods.org/using/getting-started.html)
 
-Add **AxonixSDK** to your Podfile. 
+Add **AxonixSDK** to your Podfile.
 
 ```ruby
 pod "AxonixSDK", "~> 7.0"
@@ -133,6 +134,14 @@ After you're finished your "Link Binary With Libraries" section should look like
 
 
 ![Link Binary with Libraries](http://cl.ly/image/201T2z3D390l/Resized%20Screen%202014-07-21%20at%2011.27.08%20am.png)
+
+### Add the linker flag (only for Manual installation)
+
+Finally, for installing manually you will need to add a linker flag.
+
+Select your Project and go to Build Settings > Other Linker Flags. Add `-ObjC` to the field, as shown below.  
+
+![Add the linker flag](https://s3.amazonaws.com/f.cl.ly/items/1k2j07003N040U3S2c35/-ObjC_flag_final.png)
 
 ----
 
@@ -312,7 +321,7 @@ It’s very important to request ads properly. If you don’t follow the instruc
 
 #### Automatically request new ads
 
-In your view controller's `viewDidAppear:` method, you can start requesting new ads by calling the `resumeAdAutoRefresh` method on the ad view. 
+In your view controller's `viewDidAppear:` method, you can start requesting new ads by calling the `resumeAdAutoRefresh` method on the ad view.
 
 ```
 - (void)viewDidAppear:(BOOL)animated {
@@ -388,7 +397,7 @@ implement the `AxonixFullScreenAdDelegate` protocol and create a property to hol
 @implementation AxonixDemoFullScreenAdvertising
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
+
     self.fullScreenAdViewController = [[AxonixFullScreenAdViewController alloc] init];
 	self.fullScreenAdViewController.delegate = self;
 }
