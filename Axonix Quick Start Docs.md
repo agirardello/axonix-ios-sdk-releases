@@ -182,7 +182,7 @@ your App Delegate:
 ```
 
 You should replace the `@"your-application-id-here"` string with a string containing
-your actual application ID, found in the [Axonix Dashboard][2]. If you haven't created
+your actual application ID, found in the [developer console][2]. If you haven't created
 an application in Axonix yet, you can follow [these steps][3] and you will recieve your
 Application ID when you're finished.
 
@@ -193,7 +193,7 @@ Application ID when you're finished.
 
 ## Adding a Banner Ad in your Interface
 
-> **IMPORTANT:** After enabling an ad in the developer dashboard you may have wait up to an hour before
+> **IMPORTANT:** After enabling an ad in the developer console you may have wait up to an hour before
 > it becomes available.
 
 ### Add a view to your interface
@@ -496,10 +496,10 @@ your application:
 # Using the Axonix Demo App
 
 Simply download it, edit the AppDelegate.m file and replace "your-application-id-here" with
-the application ID you received. Then from the [Developer Dashboard at axonix.com][2]
+the application ID you received. Then from the [developer console][2]
 register Ad Sizes 320x50 and Fullscreen. You will have to wait up to 1 hour until this is
 validated and propagated across the network. After that, ads will show.
 
 [1]: http://guides.cocoapods.org/using/getting-started.html
-[2]: https://developer.axonix.com/account/applications
-[3]: https://developer.axonix.com/account/general/add_application
+[2]: https://developer.axonix.com/
+[3]: https://developer.axonix.com/#axonix/views/applications/add.html
