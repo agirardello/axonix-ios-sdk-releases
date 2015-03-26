@@ -1,4 +1,4 @@
-# Axonix SDK 7.0 Release
+# Axonix SDK 7.0.5 Release
 
 Please feel free to raise issues [on Github](https://github.com/AxonixRTB/axonix-ios-sdk-releases/issues)
 
